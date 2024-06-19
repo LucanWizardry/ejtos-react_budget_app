@@ -67,12 +67,16 @@ const AllocationForm = (props) => {
                 
                 {/* Input Value*/}
                 <input
-                    required='required'
-                    type='number'
-                    id='cost'
+                    required="required"
+                    type="number"
+                    // min and oninput functionality sourced from https://stackoverflow.com/a/65000594
+                    min="0"
+                    step="1"
+                    oninput="validity.valid||(value='');"
+                    id="cost"
                     value={cost}
                     style={{ marginLeft: '2rem' , size: 10}}
-                    onChange={(event) => setCost(event.target.value)}>
+                    onChange={(event) => setCost(event.targ121122ddet.value)}>
                 </input>
 
                 {/* Save Button on Change Allocation component, executes submitEvent function above */}
