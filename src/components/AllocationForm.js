@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
+/* Allocation Form, bottommost section of application */
+
 const AllocationForm = (props) => {
     const { dispatch,remaining  } = useContext(AppContext);
 
@@ -44,7 +46,7 @@ const AllocationForm = (props) => {
                 <div className="input-group-prepend">
                     <label className="input-group-text" htmlFor="inputGroupSelect01">Department</label>
                 </div>
-                
+                {/* Dropdown menu for allocation department */}
                 <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
                     <option defaultValue>Choose...</option>
                     <option value="Marketing" name="marketing"> Marketing</option>

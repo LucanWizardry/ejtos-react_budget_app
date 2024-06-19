@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
+/* Spent So Far component on App, Blue box */
 const ExpenseTotal = () => {
     const { expenses } = useContext(AppContext);
     const totalExpenses = expenses.reduce((total, item) => {

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
-import Remaining from './Remaining';
+import ExpenseTotal from './ExpenseTotal';
 
 const Budget = () => {
     const { budget } = useContext(AppContext);
@@ -14,7 +14,7 @@ const Budget = () => {
             <input 
                 type="number" 
                 step="10"
-                min={Remaining}
+                min={ExpenseTotal.totalExpense}
                 max="20000" 
                 value={newBudget} 
                 onChange={handleBudgetChange}>
