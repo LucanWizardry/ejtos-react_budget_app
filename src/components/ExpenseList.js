@@ -18,7 +18,7 @@ const ExpenseList = () => {
               <th scope="col">Delete</th>
             </tr>
           </thead>
-            {/* maps the expense item to the cell on the table*/}
+            {/* maps the expense item to the cell on the table */}
             <tbody>
                 {expenses.map((expense) => (
                   <ExpenseItem id={expense.id} key={expense.id} name={expense.name} cost={expense.cost} />

@@ -1,18 +1,28 @@
-
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
-/* Spent So Far component on App, Blue box */
+/* Currency component on App, Grey box */
+/* used Location.js in Shopping Cart practice lab as reference */
 const Currency = () => {
-    const { currency } = useContext(AppContext);
+    const { dispatch } = useContext(AppContext);
+
+    const changeCurrency = (val) => {
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: val,
+        })
+    }
+
     return (
         <div className='currency'>
-            <select name="currency" id="currency">
-                <option value="UK">£ Pound</option>
-                <option value="US">$ Dollar</option>
-                <option value="EU">€ Euro</option>
-                <option value="IN">₹ Ruppee</option>
+        currency{
+            <select name="currency" id="currency" onChange={event=>changeCurrency(event.target.value)}>
+                <option value="£">£ Pound</option>
+                <option value="$">$ Dollar</option>
+                <option value="€">€ Euro</option>
+                <option value="₹">₹ Ruppee</option>
             </select>
+        }
         </div>
     );
 };
