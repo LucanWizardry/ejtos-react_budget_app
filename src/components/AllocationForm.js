@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import Budget from './Budget';
 
 /* Allocation Form, bottommost section of application */
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch,remaining,Currency  } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -68,18 +69,19 @@ const AllocationForm = (props) => {
                 </select>
                 
                 {/* Input Value*/}
+                <span> {Currency}
                 <input
                     required="required"
                     type="number"
-                    // min and oninput functionality sourced from https://stackoverflow.com/a/65000594
                     min="0"
                     step="1"
-                    oninput="validity.valid||(value='');"
+                    max={Budget}
                     id="cost"
                     value={cost}
                     style={{ marginLeft: '2rem' , size: 10}}
-                    onChange={(event) => setCost(event.targ121122ddet.value)}>
+                    onChange={(event) => setCost(event.target.value)}>
                 </input>
+                </span>
 
                 {/* Save Button on Change Allocation component, executes submitEvent function above */}
                 <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>

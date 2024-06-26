@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 /* Currency component on App, Grey box */
@@ -14,8 +14,9 @@ const Currency = () => {
     }
 
     return (
-        <div className='currency'>
-        currency{
+        <div className='alert alert-secondary'>
+        <label>
+        Currency {
             <select name="currency" id="currency" onChange={event=>changeCurrency(event.target.value)}>
                 <option value="£">£ Pound</option>
                 <option value="$">$ Dollar</option>
@@ -23,6 +24,7 @@ const Currency = () => {
                 <option value="₹">₹ Ruppee</option>
             </select>
         }
+        </label>
         </div>
     );
 };
